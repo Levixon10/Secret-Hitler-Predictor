@@ -24,8 +24,11 @@ while True:
     print(f"\nRound {round_num}")
     prez = input("Enter the president: ")
     chanz = input("Enter the chancellor: ")
+    vote_passed = input("Did the vote pass? (Y/N): ")
+    if(vote_passed=="N"):
+        print("No policy passed in this round!")
+        continue
     policy = input("Enter the policy passed (L/F): ")
-
     Ruler.voting(prez, chanz)                
     
     #Assigning probabilities
