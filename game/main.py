@@ -26,7 +26,9 @@ while True:
     chanz = input("Enter the chancellor: ")
     policy = input("Enter the policy passed (L/F): ")
 
-    Ruler.voting(prez, chanz)                
+    Ruler.voting(prez, chanz)
+    
+                    
     
     #Assigning probabilities
     p_1,p_half,p_minushalf,p_minus1=0,0,0,0
@@ -43,8 +45,6 @@ while True:
     PlayerDict[prez].assignMarks(p_1,p_half,p_minushalf,p_minus1)
     PlayerDict[chanz].assignMarks(q_1,q_half,q_minushalf,q_minus1)
 
-    currentDeck.change(policy, -1)   
-    passedDeck.change(policy, 1)
     print(f"Round : {round_num}")
     for player in PlayerDict:
         print(f"Current marks of {player} : {PlayerDict[player].Marks} ")
