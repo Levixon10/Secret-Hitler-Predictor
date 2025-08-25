@@ -1,7 +1,8 @@
 class Ruler:
     president=None
     chancellor=None
-
-    def voting(self,president, chancellor):
-        self.president = president
-        self.chancellor = chancellor
+    
+    @classmethod
+    def voting(cls,president, chancellor):
+        cls.president = president
+        cls.chancellor = chancellor
