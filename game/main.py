@@ -43,7 +43,11 @@ while True:
     passedDeck.change(policy, 1)
     print(f"Round : {round_num}")
     for player in PlayerDict:
-        print(f"Current marks of {player}")
+        print(f"Current marks of {player} : {PlayerDict[player].Marks} ")
+    run=input("Is the game going to continue?[Y/N]")
+    if run=="N":
+        break
+
     round_num+=1
 
 
