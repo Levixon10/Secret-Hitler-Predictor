@@ -30,14 +30,18 @@ while True:
     
     #Assigning probabilities
     p_1,p_half,p_minushalf,p_minus1=0,0,0,0
+    q_1,q_half,q_minushalf,q_minus1=0,0,0,0
     if policy=="L":
         p_1=max(Choose2(currentDeck.fascistRem)/Choose2(currentDeck.Rem),0)
         p_half=max(currentDeck.fascistRem*currentDeck.liberalRem/Choose2(currentDeck.Rem),0)
+        q_half=max((p_half+p_1)/2,0)
     else:
         p_minus1=max(Choose2(currentDeck.liberalRem)/Choose2(currentDeck.Rem),0)
         p_minushalf=max(currentDeck.fascistRem*currentDeck.liberalRem/Choose2(currentDeck.Rem),0)
+        q_minushalf=max((p_minus1+p_minushalf)/2,0)
     
     PlayerDict[prez].assignMarks(p_1,p_half,p_minushalf,p_minus1)
+    PlayerDict[chanz].assignMarks(q_1,q_half,q_minushalf,q_minus1)
 
     currentDeck.change(policy, -1)   
     passedDeck.change(policy, 1)
